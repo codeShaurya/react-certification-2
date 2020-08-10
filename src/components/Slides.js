@@ -47,7 +47,7 @@ class Slides extends React.Component {
         <div id="navigation" className="text-center">
           <button
             data-testid="button-restart"
-            className={index === 0 ? classname1 : "small outlined"}
+            className={index !== 0 ? "small outlined" : classname1 }
             onClick={this.rs}
           >
             Restart
