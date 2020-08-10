@@ -39,31 +39,29 @@ class Slides extends React.Component {
     const { slides } = this.props;
     const { index } = this.state;
 
-    const classname = "small disabled";
-    const classname1 = "small outlined disabled";
-
-    console.log(index);
-
     return (
       <div>
         <div id="navigation" className="text-center">
           <button
+            disabled={index === 0 ? true : false}
             data-testid="button-restart"
-            className={index !== 0 ? "small outlined" : classname1}
+            className={"small outlined"}
             onClick={index !== 0 ? this.rs : null}
           >
             Restart
           </button>
           <button
+            disabled={index === 0 ? true : false}
             data-testid="button-prev"
-            className={index === 0 ? classname : "small"}
+            className={"small"}
             onClick={this.prev}
           >
             Prev
           </button>
           <button
             data-testid="button-next"
-            className={index === slides.length - 1 ? classname : "small"}
+            disabled={index === slides.length - 1 ? true : false}
+            className={"small"}
             onClick={this.next}
           >
             Next
